@@ -2079,8 +2079,8 @@ class PlayState extends MusicBeatState
 				health = 0.10;
 			else
 			if (health <= 0.01)
-				health = 0.01;
-				health -= 0.015;
+			health = 0.01;
+			health -= 0.015;
 			antidrain = false;
 		}
 		/*if (FlxG.keys.justPressed.NINE)
@@ -3757,22 +3757,8 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-
-		if(curSong.toLowerCase() == 'antidarkness')
-		{
-			antidrain = true;
-		}
-		if(curSong.toLowerCase() == 'antitoxin')
-		{
-			antidrain = true;
-		}	
-		
 		antidrain = false;
 
-		if(dad.curCharacter == 'anti')
-		{
-			FlxG.camera.shake(0.040, 0.040);
-		}
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
 
@@ -4210,6 +4196,10 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
+		if(curSong == 'antitoxin' && curBeat == 10)
+		{
+			antidrain = true;
+		}
 		
 		iconP1.scale.set(1.2, 1.2);
 		iconP2.scale.set(1.2, 1.2);
