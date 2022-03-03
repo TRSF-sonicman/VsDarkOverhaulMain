@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="light_flicker.png">
+	<!-- Created with Adobe Animate version 21.0.0.35450 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="flicker0000" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0001" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0002" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0003" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0004" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0005" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0006" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0007" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0008" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0009" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0010" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0011" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0012" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0013" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0014" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0016" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0018" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0019" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0020" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0021" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0022" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0023" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0024" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0025" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0026" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0028" x="0" y="0" width="570" height="869"/>
+	<SubTexture name="flicker0029" x="0" y="0" width="570" height="869"/>
+</TextureAtlas>

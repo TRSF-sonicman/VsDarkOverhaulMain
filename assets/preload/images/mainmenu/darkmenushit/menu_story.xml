@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="menu_story.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="story basic0000" x="0" y="0" width="257" height="120"/>
+	<SubTexture name="story basic0001" x="0" y="0" width="257" height="120"/>
+	<SubTexture name="story basic0002" x="257" y="0" width="257" height="120"/>
+	<SubTexture name="story basic0003" x="257" y="0" width="257" height="120"/>
+	<SubTexture name="story basic0004" x="514" y="0" width="257" height="120"/>
+	<SubTexture name="story basic0005" x="514" y="0" width="257" height="120"/>
+	<SubTexture name="story white0000" x="0" y="120" width="278" height="142"/>
+	<SubTexture name="story white0001" x="278" y="120" width="277" height="142" frameX="0" frameY="0" frameWidth="278" frameHeight="142"/>
+	<SubTexture name="story white0002" x="555" y="120" width="277" height="142" frameX="0" frameY="0" frameWidth="278" frameHeight="142"/>
+</TextureAtlas>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="MAIN_bop.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="bop0000" x="0" y="0" width="984" height="1084" frameX="0" frameY="-18" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0001" x="0" y="0" width="984" height="1084" frameX="0" frameY="-18" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0002" x="984" y="0" width="985" height="1080" frameX="-4" frameY="-22" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0003" x="984" y="0" width="985" height="1080" frameX="-4" frameY="-22" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0004" x="1969" y="0" width="985" height="1086" frameX="-7" frameY="-16" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0005" x="1969" y="0" width="985" height="1086" frameX="-7" frameY="-16" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0006" x="2954" y="0" width="985" height="1102" frameX="-6" frameY="0" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0007" x="2954" y="0" width="985" height="1102" frameX="-6" frameY="0" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0008" x="0" y="1102" width="985" height="1097" frameX="-6" frameY="-5" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0009" x="0" y="1102" width="985" height="1097" frameX="-6" frameY="-5" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0010" x="0" y="1102" width="985" height="1097" frameX="-6" frameY="-5" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0011" x="0" y="1102" width="985" height="1097" frameX="-6" frameY="-5" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0012" x="0" y="1102" width="985" height="1097" frameX="-6" frameY="-5" frameWidth="992" frameHeight="1102"/>
+	<SubTexture name="bop0013" x="985" y="1102" width="985" height="1094" frameX="-4" frameY="-8" frameWidth="992" frameHeight="1102"/>
+</TextureAtlas>
