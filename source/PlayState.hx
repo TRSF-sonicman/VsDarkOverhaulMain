@@ -3758,6 +3758,15 @@ class PlayState extends MusicBeatState
 	function opponentNoteHit(note:Note):Void
 	{
 
+		if(curSong.toLowerCase() == 'antidarkness')
+		{
+			antidrain = true;
+		}
+		if(curSong.toLowerCase() == 'antitoxin')
+		{
+			antidrain = true;
+		}	
+		
 		antidrain = false;
 
 		if(dad.curCharacter == 'anti')
