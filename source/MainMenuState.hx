@@ -58,6 +58,11 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
+	var leftBind:Array<FlxKey>;
+	var downBind:Array<FlxKey>;
+	var upBind:Array<FlxKey>;
+	var rightBind:Array<FlxKey>;
+	var stepsFromExtras:Int;
 
 	override function create()
 	{
@@ -67,6 +72,13 @@ class MainMenuState extends MusicBeatState
 		#end
 
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
+
+		leftBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left'));
+		downBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_down'));
+		upBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up'));
+		rightBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'));
+
+		stepsFromExtras = 4;
 
 		camGame = new FlxCamera();
 		camAchievement = new FlxCamera();
@@ -157,12 +169,10 @@ class MainMenuState extends MusicBeatState
 		
 		add(bench);
 		add(dark);
-		
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
-		
 		var scale:Float = 1;
 		/*if(optionShit.length > 6) {
 			scale = 6 / optionShit.length;
@@ -277,6 +287,39 @@ class MainMenuState extends MusicBeatState
 				selectedSomethin = true;
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
+			}
+
+			if(FlxG.keys.justPressed.D) {
+				stepsFromExtras = 3;
+				trace("Three more steps");
+			}
+
+			if(FlxG.keys.justPressed.A && stepsFromExtras == 3) {
+				stepsFromExtras = 2;
+				trace("Two more steps");
+			}
+
+			if(FlxG.keys.justPressed.R && stepsFromExtras == 2) {
+				stepsFromExtras = 1;
+				trace("One more step");
+			}
+
+			if(FlxG.keys.justPressed.K && stepsFromExtras == 1) {
+				stepsFromExtras = 0;
+			}
+
+			if(stepsFromExtras == 0) {
+				if(WeekData.extraOn == false) {
+					WeekData.extraOn = true;
+					FlxG.sound.play(Paths.sound('darkFuniVoice'));
+					trace("Extra Songs Activated");
+					stepsFromExtras = 4;
+				} else {
+					WeekData.extraOn = false;
+					FlxG.sound.play(Paths.sound('darkFuniVoice'));
+					trace("Extra Songs Desactivated");
+					stepsFromExtras = 4;
+				}
 			}
 
 			if (controls.ACCEPT)

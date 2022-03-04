@@ -4,6 +4,8 @@ package;
 import sys.io.File;
 import sys.FileSystem;
 #end
+import flixel.FlxG;
+import flixel.util.FlxSave;
 import lime.utils.Assets;
 import openfl.utils.Assets as OpenFlAssets;
 import haxe.Json;
@@ -25,12 +27,28 @@ typedef WeekFile =
 	var hideStoryMode:Bool;
 	var hideFreeplay:Bool;
 	var difficulties:String;
+	var isExtra:Bool;
 }
 
 class WeekData {
 	public static var weeksLoaded:Map<String, WeekData> = new Map<String, WeekData>();
 	public static var weeksList:Array<String> = [];
 	public var folder:String = '';
+
+	public static var extraOn:Bool = false;
+	
+	public static function saveExtraOn() {
+		FlxG.save.data.extraOn = extraOn;
+		FlxG.save.flush();
+		var save:FlxSave = new FlxSave();
+		save.flush();
+	}
+
+	public static function loadExtraOn() {
+		if(FlxG.save.data.extraOn != null) {
+			extraOn = FlxG.save.data.extraOn;
+		}
+	}
 	
 	// JSON variables
 	public var songs:Array<Dynamic>;
@@ -44,6 +62,7 @@ class WeekData {
 	public var hideStoryMode:Bool;
 	public var hideFreeplay:Bool;
 	public var difficulties:String;
+	public var isExtra:Bool;
 
 	public static function createWeekFile():WeekFile {
 		var weekFile:WeekFile = {
@@ -57,7 +76,8 @@ class WeekData {
 			startUnlocked: true,
 			hideStoryMode: false,
 			hideFreeplay: false,
-			difficulties: ''
+			difficulties: '',
+			isExtra: false
 		};
 		return weekFile;
 	}
@@ -75,6 +95,7 @@ class WeekData {
 		hideStoryMode = weekFile.hideStoryMode;
 		hideFreeplay = weekFile.hideFreeplay;
 		difficulties = weekFile.difficulties;
+		isExtra = weekFile.isExtra;
 	}
 
 	public static function reloadWeekFiles(isStoryMode:Null<Bool> = false)
@@ -139,7 +160,7 @@ class WeekData {
 						}
 						#end
 
-						if(weekFile != null && (isStoryMode == null || (isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay))) {
+						if(weekFile != null && (isStoryMode == null || (isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay && !weekFile.isExtra) || (!isStoryMode && !weekFile.hideFreeplay && weekFile.isExtra && extraOn))) {
 							weeksLoaded.set(sexList[i], weekFile);
 							weeksList.push(sexList[i]);
 						}
@@ -189,7 +210,7 @@ class WeekData {
 					weekFile.folder = directory.substring(Paths.mods().length, directory.length-1);
 					#end
 				}
-				if((PlayState.isStoryMode && !weekFile.hideStoryMode) || (!PlayState.isStoryMode && !weekFile.hideFreeplay))
+				if((PlayState.isStoryMode && !weekFile.hideStoryMode) || (!PlayState.isStoryMode && !weekFile.hideFreeplay && !weekFile.isExtra) || (!PlayState.isStoryMode && !weekFile.hideFreeplay && weekFile.isExtra && extraOn))
 				{
 					weeksLoaded.set(weekToCheck, weekFile);
 					weeksList.push(weekToCheck);
