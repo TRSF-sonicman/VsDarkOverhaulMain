@@ -6,6 +6,8 @@ import openfl.utils.AssetType;
 import openfl.utils.Assets as OpenFlAssets;
 import lime.utils.Assets;
 import flixel.FlxSprite;
+import ClientPrefs;
+import Song.SwagSong;
 #if MODS_ALLOWED
 import sys.io.File;
 import sys.FileSystem;
@@ -184,6 +186,14 @@ class Paths
 		if(file != null) {
 			return file;
 		}
+		if(ClientPrefs.betaSongs == true) {
+			file = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/BetaVoices'));
+			if(file != null) {
+				file = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
+			}
+		} else {
+			file = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Voices'));
+		}
 		#end
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Voices.$SOUND_EXT';
 	}
@@ -195,8 +205,26 @@ class Paths
 		if(file != null) {
 			return file;
 		}
+		if(ClientPrefs.betaSongs == true) {
+			file = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/BetaInst'));
+			if(file != null) {
+				file = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
+			}
+		} else {
+			file = returnSongFile(modsSongs(song.toLowerCase().replace(' ', '-') + '/Inst'));
+		}
 		#end
 		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/Inst.$SOUND_EXT';
+	}
+
+	inline static public function betaVoices(song:String):Any
+	{
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/BetaVoices.$SOUND_EXT';
+	}
+
+	inline static public function betaInst(song:String):Any
+	{
+		return 'songs:assets/songs/${song.toLowerCase().replace(' ', '-')}/BetaInst.$SOUND_EXT';
 	}
 
 	#if MODS_ALLOWED

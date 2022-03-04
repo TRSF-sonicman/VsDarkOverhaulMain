@@ -1660,9 +1660,29 @@ class PlayState extends MusicBeatState
 		previousFrameTime = FlxG.game.ticks;
 		lastReportedPlayheadPosition = 0;
 
-		FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
-		FlxG.sound.music.onComplete = finishSong;
-		vocals.play();
+		if(ClientPrefs.betaSongs == true) {
+			if(curSong == 'Trespass') {
+				FlxG.sound.playMusic(Paths.betaInst(PlayState.SONG.song), 1, false);
+				FlxG.sound.music.onComplete = finishSong;
+				vocals.play();
+			} else if(curSong == 'Darkness') {
+				FlxG.sound.playMusic(Paths.betaInst(PlayState.SONG.song), 1, false);
+				FlxG.sound.music.onComplete = finishSong;
+				vocals.play();
+			} else if(curSong == 'Problem') {
+				FlxG.sound.playMusic(Paths.betaInst(PlayState.SONG.song), 1, false);
+				FlxG.sound.music.onComplete = finishSong;
+				vocals.play();
+			} else {
+				FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+				FlxG.sound.music.onComplete = finishSong;
+				vocals.play();
+			}
+		} else {
+			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+			FlxG.sound.music.onComplete = finishSong;
+			vocals.play();
+		}
 
 		if(paused) {
 			//trace('Oopsie doopsie! Paused sound');
@@ -1697,7 +1717,21 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+			if(ClientPrefs.betaSongs == true)
+			{
+				if(curSong == 'Trespass')
+				{
+					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
+				} else if(curSong == 'Darkness') {
+					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
+				} else if(curSong == 'Problem') {
+					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
+				} else {
+					vocals = new FlxSound();
+				}
+			} else {
+				vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+			}
 		else
 			vocals = new FlxSound();
 
