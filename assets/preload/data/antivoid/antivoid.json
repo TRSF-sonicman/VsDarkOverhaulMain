@@ -2,7 +2,7 @@
 	"song": {
 		"sectionLengths": [],
 		"player1": "bf-d",
-		"player2": "antidark",
+		"player2": "anti",
 		"notes": [
 			{
 				"sectionNotes": [],
@@ -8072,6 +8072,7 @@
 		],
 		"player3": "gf-d",
 		"song": "Antivoid",
+		"stage": "starryAlley",
 		"needsVoices": true,
 		"validScore": true,
 		"sections": 0,

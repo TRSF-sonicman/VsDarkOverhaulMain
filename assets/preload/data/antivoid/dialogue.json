@@ -1,0 +1,102 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Dark! We were looking for you."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Oh, hello Anti."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Let's go home, it's really late."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bap Beep Skebap."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Uh? Who is this guy?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Is he anoying you?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Well, we were just..."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Beep Bap Bep!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "So, you think your a rough guy, uh?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Let's see about that!"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Anyways, I'm going home."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "pissed",
+			"text": "Nope, you're staying."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "anti",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "You're gonna help me kick this idiot's ass."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Alright, I guess."
+		}
+	]
+}

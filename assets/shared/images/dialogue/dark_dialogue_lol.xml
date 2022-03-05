@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="dark_speech_assets.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="speech10000" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10001" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10002" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10003" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10004" x="416" y="0" width="416" height="759" frameX="0" frameY="-1" frameWidth="416" frameHeight="760"/>
+	<SubTexture name="speech10005" x="416" y="0" width="416" height="759" frameX="0" frameY="-1" frameWidth="416" frameHeight="760"/>
+	<SubTexture name="speech10006" x="832" y="0" width="416" height="759" frameX="0" frameY="-1" frameWidth="416" frameHeight="760"/>
+	<SubTexture name="speech10007" x="832" y="0" width="416" height="759" frameX="0" frameY="-1" frameWidth="416" frameHeight="760"/>
+	<SubTexture name="speech10008" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10009" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10010" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10011" x="0" y="0" width="416" height="760"/>
+	<SubTexture name="speech10012" x="0" y="0" width="416" height="760"/>
+</TextureAtlas>

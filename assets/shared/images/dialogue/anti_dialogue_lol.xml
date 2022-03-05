@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="anti_speech_assets.png">
+	<!-- Created with Adobe Animate version 21.0.5.40714 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="speech10000" x="0" y="0" width="1268" height="931" frameX="0" frameY="0" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10001" x="1268" y="0" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10002" x="2536" y="0" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10003" x="3805" y="0" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10004" x="5074" y="0" width="1268" height="928" frameX="0" frameY="-3" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10005" x="6342" y="0" width="1268" height="928" frameX="0" frameY="-3" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10006" x="0" y="931" width="1269" height="929" frameX="0" frameY="-2" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10007" x="1269" y="931" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10008" x="2538" y="931" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10009" x="3806" y="931" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10010" x="5074" y="931" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10011" x="6343" y="931" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10012" x="0" y="1861" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech10013" x="1268" y="1861" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20000" x="2536" y="1861" width="1268" height="931" frameX="0" frameY="0" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20001" x="3804" y="1861" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20002" x="5072" y="1861" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20003" x="6341" y="1861" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20004" x="0" y="2792" width="1268" height="928" frameX="0" frameY="-3" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20005" x="1268" y="2792" width="1268" height="928" frameX="0" frameY="-3" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20006" x="2536" y="2792" width="1269" height="929" frameX="0" frameY="-2" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20007" x="3805" y="2792" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20008" x="5074" y="2792" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20009" x="6342" y="2792" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20010" x="0" y="3722" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20011" x="1269" y="3722" width="1269" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20012" x="2538" y="3722" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+	<SubTexture name="speech20013" x="3806" y="3722" width="1268" height="930" frameX="0" frameY="-1" frameWidth="1269" frameHeight="931"/>
+</TextureAtlas>

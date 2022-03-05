@@ -7390,8 +7390,9 @@
 				"mustHitSection": true
 			}
 		],
-		"player2": "antidark",
+		"player2": "anti",
 		"player3": "gf-d",
+		"stage": "starryAlley",
 		"song": "Antivoid",
 		"sections": 0,
 		"needsVoices": true,

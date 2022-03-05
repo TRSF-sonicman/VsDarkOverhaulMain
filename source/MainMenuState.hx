@@ -156,17 +156,9 @@ class MainMenuState extends MusicBeatState
 		if(dark != null) 
 			dark.animation.play('bop', true);
 
-		
-		if(FlxG.save.data.weekCompleted)
-		{
-			FlxG.mouse.visible = true;
-			add(graffiti);
-			add(graffiti2);
-		}
-		else
-		if(FlxG.save.data.weekCompleted = false)
-			FlxG.mouse.visible = false;
-		
+		FlxG.mouse.visible = true;
+		add(graffiti);
+		add(graffiti2);
 		add(bench);
 		add(dark);
 

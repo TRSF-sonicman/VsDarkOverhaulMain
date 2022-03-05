@@ -36,3 +36,44 @@ function opponentNoteHit(id,d,t,s)
 		end
 	end
 end
+
+function onUpdate(elapsed)
+	if getProperty('Dark.animation.name') == 'idle' then
+        setProperty('Dark.x', 0)
+		setProperty('Dark.y', 705)
+    end
+	if getProperty('Dark.animation.name') == '0' then
+        setProperty('Dark.x', 0)
+		setProperty('Dark.y', 692)
+    end
+	if getProperty('Dark.animation.name') == '1' then
+        setProperty('Dark.x', 0)
+		setProperty('Dark.y', 705)
+    end
+	if getProperty('Dark.animation.name') == '2' then
+        setProperty('Dark.x', 0)
+		setProperty('Dark.y', 660)
+    end
+	if getProperty('Dark.animation.name') == '3' then
+        setProperty('Dark.x', 0)
+		setProperty('Dark.y', 680)
+    end
+end
+
+local allowCountdown = false
+function onStartCountdown()
+	-- Block the first countdown and start a timer of 0.8 seconds to play the dialogue
+	if not allowCountdown and isStoryMode and not seenCutscene then
+		setProperty('inCutscene', true);
+		runTimer('startDialogue', 0.8);
+		allowCountdown = true;
+		return Function_Stop;
+	end
+	return Function_Continue;
+end
+
+function onTimerCompleted(tag, loops, loopsLeft)
+	if tag == 'startDialogue' then -- Timer completed, play dialogue
+		startDialogue('dialogue', 'ohnoantidark');
+	end
+end

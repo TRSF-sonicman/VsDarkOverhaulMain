@@ -1,4 +1,3 @@
 tutorial
 weekD
-weekD2
 extras
