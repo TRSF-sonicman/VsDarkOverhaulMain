@@ -7,17 +7,9 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
-<<<<<<< HEAD
-<<<<<<< HEAD
 	public static var weekbeaten:Bool = false;
-=======
 	public static var darkWeekBeaten:Bool = false; //Not an option in preferences, this is to detect if the main week (dark) has been beaten.
 	public static var extraOn:Bool = false; //Extra on is not an option in Preferences, just adding this in because I wanna make it save.
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
-=======
-	public static var darkWeekBeaten:Bool = false; //Not an option in preferences, this is to detect if the main week (dark) has been beaten.
-	public static var extraOn:Bool = false; //Extra on is not an option in Preferences, just adding this in because I wanna make it save.
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
 	public static var betaSongs:Bool = false;
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
@@ -93,17 +85,11 @@ class ClientPrefs {
 	}
 
 	public static function saveSettings() {
-<<<<<<< HEAD
-<<<<<<< HEAD
 		FlxG.save.data.weakbeaten = weekbeaten;
-=======
 		FlxG.save.data.darkWeekBeaten = darkWeekBeaten;
 		FlxG.save.data.extraOn = extraOn;
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
-=======
 		FlxG.save.data.darkWeekBeaten = darkWeekBeaten;
 		FlxG.save.data.extraOn = extraOn;
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
 		FlxG.save.data.betaSongs = betaSongs;
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
