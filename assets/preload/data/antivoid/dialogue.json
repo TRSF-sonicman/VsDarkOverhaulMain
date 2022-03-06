@@ -9,7 +9,7 @@
 		},
 		{
 			"speed": 0.05,
-			"portrait": "anti",
+			"portrait": "dark",
 			"boxState": "normal",
 			"expression": "talk",
 			"text": "Oh, hello Anti."
