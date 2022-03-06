@@ -1733,7 +1733,7 @@ class PlayState extends MusicBeatState
 				} else if(curSong == 'Discrepancy') {
 					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
 				} else {
-					vocals = new FlxSound();
+					vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
 				}
 			} else {
 				vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
@@ -3212,9 +3212,9 @@ class PlayState extends MusicBeatState
 				{
 					FlxG.sound.playMusic(Paths.music('freakyMenu'));
 
-					if (StoryMenuState.curWeek == 1 && StoryMenuState.curDifficulty == 2 && !FlxG.save.data.weekCompleted)
+					if (StoryMenuState.curWeek == 0 && CoolUtil.difficultyString() == 'HARD' && !FlxG.save.data.weekbeaten)
 						
-						FlxG.save.data.weekCompleted;
+						FlxG.save.data.weekCompleted = StoryMenuState.weekCompleted;
 						FlxG.save.flush();
 
 					cancelMusicFadeTween();
