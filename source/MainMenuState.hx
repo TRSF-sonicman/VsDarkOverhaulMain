@@ -149,39 +149,18 @@ class MainMenuState extends MusicBeatState
 
 		if(dark != null) 
 			dark.animation.play('bop', true);
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-		if(FlxG.save.data.weekCompleted = true)
-		{
-=======
 		
 		if(ClientPrefs.darkWeekBeaten == true) {
 			FlxG.save.data.darkWeekBeaten = ClientPrefs.darkWeekBeaten;
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
-=======
-		
-		if(ClientPrefs.darkWeekBeaten == true) {
-			FlxG.save.data.darkWeekBeaten = ClientPrefs.darkWeekBeaten;
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
 			FlxG.mouse.visible = true;
 			add(graffiti);
 			add(graffiti2);
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
 		else
 		if(FlxG.save.data.weekCompleted = false)
 		{
 			FlxG.mouse.visible = false;
 		}
-			
-=======
-
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
-=======
-
->>>>>>> 27cb2790e4c11bef09c08b36dedc30b7284a3b70
 		add(bench);
 		add(dark);
 
