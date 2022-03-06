@@ -3,6 +3,7 @@ package;
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
+import flixel.util.FlxSave;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
@@ -58,10 +59,6 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
-	var leftBind:Array<FlxKey>;
-	var downBind:Array<FlxKey>;
-	var upBind:Array<FlxKey>;
-	var rightBind:Array<FlxKey>;
 	var stepsFromExtras:Int;
 
 	override function create()
@@ -72,11 +69,6 @@ class MainMenuState extends MusicBeatState
 		#end
 
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
-
-		leftBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left'));
-		downBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_down'));
-		upBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up'));
-		rightBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'));
 
 		stepsFromExtras = 4;
 
@@ -156,9 +148,14 @@ class MainMenuState extends MusicBeatState
 		if(dark != null) 
 			dark.animation.play('bop', true);
 
-		FlxG.mouse.visible = true;
-		add(graffiti);
-		add(graffiti2);
+		
+		if(ClientPrefs.darkWeekBeaten == true) {
+			FlxG.save.data.darkWeekBeaten = ClientPrefs.darkWeekBeaten;
+			FlxG.mouse.visible = true;
+			add(graffiti);
+			add(graffiti2);
+		}
+
 		add(bench);
 		add(dark);
 
@@ -301,13 +298,15 @@ class MainMenuState extends MusicBeatState
 			}
 
 			if(stepsFromExtras == 0) {
-				if(WeekData.extraOn == false) {
-					WeekData.extraOn = true;
+				if(ClientPrefs.extraOn == false) {
+					ClientPrefs.extraOn = true;
+					FlxG.save.data.extraOn = ClientPrefs.extraOn;
 					FlxG.sound.play(Paths.sound('darkFuniVoice'));
 					trace("Extra Songs Activated");
 					stepsFromExtras = 4;
 				} else {
-					WeekData.extraOn = false;
+					ClientPrefs.extraOn = false;
+					FlxG.save.data.extraOn = ClientPrefs.extraOn;
 					FlxG.sound.play(Paths.sound('darkFuniVoice'));
 					trace("Extra Songs Desactivated");
 					stepsFromExtras = 4;

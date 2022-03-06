@@ -1673,6 +1673,10 @@ class PlayState extends MusicBeatState
 				FlxG.sound.playMusic(Paths.betaInst(PlayState.SONG.song), 1, false);
 				FlxG.sound.music.onComplete = finishSong;
 				vocals.play();
+			} else if(curSong == 'Discrepancy') {
+				FlxG.sound.playMusic(Paths.betaInst(PlayState.SONG.song), 1, false);
+				FlxG.sound.music.onComplete = finishSong;
+				vocals.play();
 			} else {
 				FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
 				FlxG.sound.music.onComplete = finishSong;
@@ -1725,6 +1729,8 @@ class PlayState extends MusicBeatState
 				} else if(curSong == 'Darkness') {
 					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
 				} else if(curSong == 'Problem') {
+					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
+				} else if(curSong == 'Discrepancy') {
 					vocals = new FlxSound().loadEmbedded(Paths.betaVoices(PlayState.SONG.song));
 				} else {
 					vocals = new FlxSound();
@@ -3227,6 +3233,10 @@ class PlayState extends MusicBeatState
 							Highscore.saveWeekScore(WeekData.getWeekFileName(), campaignScore, storyDifficulty);
 						}
 
+						if(storyWeek == 1) {
+							ClientPrefs.darkWeekBeaten = true;
+						}
+
 						FlxG.save.data.weekCompleted = StoryMenuState.weekCompleted;
 						FlxG.save.flush();
 					}
@@ -4444,7 +4454,7 @@ class PlayState extends MusicBeatState
 									if(achievementName == 'week5_nomiss') unlock = true;
 								case 'week6':
 									if(achievementName == 'week6_nomiss') unlock = true;
-								case 'week7':
+								case 'weekD':
 									if(achievementName == 'darkweek_nomiss') unlock = true;
 							}
 						}
