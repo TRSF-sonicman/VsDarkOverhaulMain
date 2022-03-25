@@ -171,9 +171,9 @@ class TitleState extends MusicBeatState
 
 		Highscore.load();
 
-		if (FlxG.save.data.weekCompleted == null)
+		if (FlxG.save.data.weekComplete == null)
 		{
-			FlxG.save.data.weekCompleted = false;
+			FlxG.save.data.weekComplete = false;
 			trace('week has not yet been beated bitch');
 		}
 			

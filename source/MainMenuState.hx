@@ -3,6 +3,7 @@ package;
 import Discord.DiscordClient;
 #end
 import flixel.FlxG;
+import flixel.util.FlxSave;
 import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.FlxCamera;
@@ -19,6 +20,7 @@ import lime.app.Application;
 import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
+import flixel.util.FlxTimer;
 
 using StringTools;
 
@@ -26,6 +28,7 @@ class MainMenuState extends MusicBeatState
 {
 	public static var psychEngineVersion:String = '0.5.1'; //This is also used for Discord RPC
 	public static var curSelected:Int = 0;
+	public static var sex:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
 	private var camGame:FlxCamera;
@@ -58,10 +61,6 @@ class MainMenuState extends MusicBeatState
 	var camFollow:FlxObject;
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
-	var leftBind:Array<FlxKey>;
-	var downBind:Array<FlxKey>;
-	var upBind:Array<FlxKey>;
-	var rightBind:Array<FlxKey>;
 	var stepsFromExtras:Int;
 
 	override function create()
@@ -72,11 +71,6 @@ class MainMenuState extends MusicBeatState
 		#end
 
 		debugKeys = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
-
-		leftBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left'));
-		downBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_down'));
-		upBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up'));
-		rightBind = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'));
 
 		stepsFromExtras = 4;
 
@@ -155,10 +149,18 @@ class MainMenuState extends MusicBeatState
 
 		if(dark != null) 
 			dark.animation.play('bop', true);
-
-		FlxG.mouse.visible = true;
-		add(graffiti);
-		add(graffiti2);
+		
+		if(ClientPrefs.darkWeekBeaten == true) {
+			FlxG.save.data.darkWeekBeaten = ClientPrefs.darkWeekBeaten;
+			FlxG.mouse.visible = true;
+			add(graffiti);
+			add(graffiti2);
+		}
+		else
+		if(FlxG.save.data.weekCompleted = false)
+		{
+			FlxG.mouse.visible = false;
+		}
 		add(bench);
 		add(dark);
 
@@ -260,8 +262,8 @@ class MainMenuState extends MusicBeatState
                 CoolUtil.difficultyString() == 'HARD';
                 PlayState.storyWeek = 1;
                 LoadingState.loadAndSwitchState(new PlayState());
-                trace('PlayState.SONG + PlayState.storyDifficulty');
 			}
+			
 			if (controls.UI_UP_P)
 			{
 				FlxG.sound.play(Paths.sound('scrollMenu'));
@@ -280,7 +282,23 @@ class MainMenuState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 				MusicBeatState.switchState(new TitleState());
 			}
-
+		if (FlxG.keys.justPressed.DELETE)
+		{
+			var boob = 0;
+			new FlxTimer().start(0.1, function(hello:FlxTimer)
+			{
+				boob += 1;
+				if (boob == 30)
+				{
+					FlxG.save.data.weekCompleted = false;
+					FlxG.switchState(new MainMenuState());
+				}
+				if (FlxG.keys.pressed.DELETE)
+				{
+					hello.reset();
+				}
+			});
+		}
 			if(FlxG.keys.justPressed.D) {
 				stepsFromExtras = 3;
 				trace("Three more steps");
@@ -301,13 +319,15 @@ class MainMenuState extends MusicBeatState
 			}
 
 			if(stepsFromExtras == 0) {
-				if(WeekData.extraOn == false) {
-					WeekData.extraOn = true;
+				if(ClientPrefs.extraOn == false) {
+					ClientPrefs.extraOn = true;
+					FlxG.save.data.extraOn = ClientPrefs.extraOn;
 					FlxG.sound.play(Paths.sound('darkFuniVoice'));
 					trace("Extra Songs Activated");
 					stepsFromExtras = 4;
 				} else {
-					WeekData.extraOn = false;
+					ClientPrefs.extraOn = false;
+					FlxG.save.data.extraOn = ClientPrefs.extraOn;
 					FlxG.sound.play(Paths.sound('darkFuniVoice'));
 					trace("Extra Songs Desactivated");
 					stepsFromExtras = 4;

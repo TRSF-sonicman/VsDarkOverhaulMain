@@ -7,6 +7,9 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
+	public static var weekbeaten:Bool = false;
+	public static var darkWeekBeaten:Bool = false; //Not an option in preferences, this is to detect if the main week (dark) has been beaten.
+	public static var extraOn:Bool = false; //Extra on is not an option in Preferences, just adding this in because I wanna make it save.
 	public static var betaSongs:Bool = false;
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
@@ -82,6 +85,11 @@ class ClientPrefs {
 	}
 
 	public static function saveSettings() {
+		FlxG.save.data.weakbeaten = weekbeaten;
+		FlxG.save.data.darkWeekBeaten = darkWeekBeaten;
+		FlxG.save.data.extraOn = extraOn;
+		FlxG.save.data.darkWeekBeaten = darkWeekBeaten;
+		FlxG.save.data.extraOn = extraOn;
 		FlxG.save.data.betaSongs = betaSongs;
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
@@ -125,6 +133,12 @@ class ClientPrefs {
 	}
 
 	public static function loadPrefs() {
+		if(FlxG.save.data.darkWeekBeaten != null) {
+			darkWeekBeaten = FlxG.save.data.darkWeekBeaten;
+		}
+		if(FlxG.save.data.extraOn != null) {
+			extraOn = FlxG.save.data.extraOn;
+		}
 		if(FlxG.save.data.betaSongs != null) {
 			betaSongs = FlxG.save.data.betaSongs;
 		}
@@ -231,7 +245,7 @@ class ClientPrefs {
 		}
 		if (FlxG.save.data.weekbeaten == null)
 		{
-			FlxG.save.data.weekbeaten = false;
+			weekbeaten = FlxG.save.data.weekbeaten;
 			trace('week has not yet been beated bitch');
 		}
 		// flixel automatically saves your volume!
