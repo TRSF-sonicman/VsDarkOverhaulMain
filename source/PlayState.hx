@@ -2116,12 +2116,19 @@ class PlayState extends MusicBeatState
 		{
 			if(curSong.toLowerCase() == 'antivoid')
 			if (health <= 0.10)
+			{
 				health = 0.10;
-			else
-			if (health <= 0.01)
-			health = 0.01;
-			health -= 0.015;
-			antidrain = false;
+			}	
+			if(curSong.toLowerCase() == 'antitoxin' || curSong.toLowerCase () == 'antidarkness')
+			{
+				if (health <= 0.1)
+					health = 0.1;
+				else
+					health -= 0.025;
+				antidrain = false;
+			}
+			
+			
 		}
 		/*if (FlxG.keys.justPressed.NINE)
 		{
@@ -3801,8 +3808,12 @@ class PlayState extends MusicBeatState
 
 	function opponentNoteHit(note:Note):Void
 	{
-		antidrain = false;
+		antidrain = true;
 
+		if(dad.curCharacter == 'anti')
+		{
+			FlxG.camera.shake(0.01, 0.1);
+		}
 		if (Paths.formatToSongPath(SONG.song) != 'tutorial')
 			camZooming = true;
 
