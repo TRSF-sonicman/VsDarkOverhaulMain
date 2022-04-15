@@ -2282,8 +2282,9 @@ class PlayState extends MusicBeatState
 				persistentUpdate = false;
 				persistentDraw = true;
 				paused = true;
-
-				// 1 / 1000 chance for Gitaroo Man easter egg
+				
+				// psych is stupid for this
+				// 1 / 100 chance for Gitaroo Man easter egg
 				/*if (FlxG.random.bool(0.1))
 				{
 					// gitaroo man easter egg
