@@ -35,7 +35,7 @@ class Cache extends MusicBeatState
 
 	var images = [];
 	var music = [];
-	
+
 	var shitz:FlxText;
 
 	override function create()
@@ -47,14 +47,17 @@ class Cache extends MusicBeatState
 		bitmapData = new Map<String,FlxGraphic>();
 		bitmapData2 = new Map<String,FlxGraphic>();
 
-		var darkBG:FlxSprite = new FlxSprite(-5000, -630).loadGraphic(Paths.image('loadingShit/loading' + FlxG.random.int(1, 3)));
+		var darkBG:FlxSprite = new FlxSprite(-5000, -615).loadGraphic(Paths.image('loadingShit/loading' + FlxG.random.int(1, 3)));
+		darkBG.antialiasing = true;
 		darkBG.screenCenter(X);
 		darkBG.setGraphicSize(Std.int(darkBG.width * 0.43));
 		add(darkBG);
 		
 
-		var darkSP:FlxSprite = new FlxSprite().loadGraphic(Paths.image('loadingShit/loading4'));
-		darkSP.screenCenter();
+		var darkSP:FlxSprite = new FlxSprite(-5000, -615).loadGraphic(Paths.image('loadingShit/loading4'));
+		darkSP.antialiasing = true;
+		darkSP.screenCenter(X);
+		darkSP.setGraphicSize(Std.int(darkSP.width * 0.43));
 		add(darkSP);
 		darkSP.visible = false;
 

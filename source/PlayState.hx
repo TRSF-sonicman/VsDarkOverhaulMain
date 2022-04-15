@@ -217,6 +217,12 @@ class PlayState extends MusicBeatState
 	var bgGhouls:BGSprite;
 
 	var lightflicker:BGSprite;
+	var oldDarkBG:BGSprite;
+	var TRBG:BGSprite;
+	var IdioBG:BGSprite;
+	var PolyBG:BGSprite;
+	var MorenoBG:BGSprite;
+	var InfernoBG:BGSprite;
 
 	
 
@@ -372,6 +378,8 @@ class PlayState extends MusicBeatState
 					curStage = 'schoolEvil';
 				case 'trespass' | 'darkness' | 'problem':
 					curStage = 'starryAlley';
+				case 'roll-the-credits':
+					curStage = 'discord';
 				default:
 					curStage = 'stage';
 			}
@@ -448,6 +456,18 @@ class PlayState extends MusicBeatState
 				add(ground);
 				lightflicker = new BGSprite('alley/light_flicker', 687, 490, 0.9, 0.9, ['flicker'], true);
 				add(lightflicker);
+			case 'discord':
+			    var oldDarkbg:BGSprite = new BGSprite('discord/dark_bg', -580, -100, 0.9, 0.9); //57 stage size
+				add(oldDarkbg);
+				var keyground:BGSprite = new BGSprite('discord/keybord_floor', 200, 810, 0.9, 0.9);
+				keyground.setGraphicSize(Std.int(keyground.width * 2.77));
+				keyground.antialiasing = true;
+				add(keyground);
+				TRBG = new BGSprite('discord/trsf_bg', 250, 440, 0.9, 0.9);
+				TRBG.antialiasing = true;
+				TRBG.setGraphicSize(Std.int(TRBG.width * 2.45));
+				
+				add(TRBG);
 
 			case 'spooky': //Week 2
 				if(!ClientPrefs.lowQuality) {
