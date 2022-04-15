@@ -1,0 +1,53 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Beep bep bop."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Third song transformation?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I don't know, never heard of that."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Beep bap bop."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Beep Skebeep Bep."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Well, that sounds really stupid."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "But if you really want a harder song,\nI guess I can give it to ya."
+		}
+	]
+}

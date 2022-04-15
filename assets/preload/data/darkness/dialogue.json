@@ -1,0 +1,53 @@
+{
+	"dialogue": [
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "I gotta admit, that wasn't too bad."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Skeebep."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bap boop beep."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bop bap bep."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "What's with the insulting?"
+		},
+		{
+			"speed": 0.05,
+			"portrait": "bf",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Bap boop."
+		},
+		{
+			"speed": 0.05,
+			"portrait": "dark",
+			"boxState": "normal",
+			"expression": "talk",
+			"text": "Ok, I guess we can do another song."
+		}
+	]
+}

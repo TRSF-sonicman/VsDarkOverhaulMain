@@ -34,21 +34,6 @@ class WeekData {
 	public static var weeksLoaded:Map<String, WeekData> = new Map<String, WeekData>();
 	public static var weeksList:Array<String> = [];
 	public var folder:String = '';
-
-	public static var extraOn:Bool = false;
-	
-	public static function saveExtraOn() {
-		FlxG.save.data.extraOn = extraOn;
-		FlxG.save.flush();
-		var save:FlxSave = new FlxSave();
-		save.flush();
-	}
-
-	public static function loadExtraOn() {
-		if(FlxG.save.data.extraOn != null) {
-			extraOn = FlxG.save.data.extraOn;
-		}
-	}
 	
 	// JSON variables
 	public var songs:Array<Dynamic>;
@@ -160,7 +145,7 @@ class WeekData {
 						}
 						#end
 
-						if(weekFile != null && (isStoryMode == null || (isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay && !weekFile.isExtra) || (!isStoryMode && !weekFile.hideFreeplay && weekFile.isExtra && extraOn))) {
+						if(weekFile != null && (isStoryMode == null || (isStoryMode && !weekFile.hideStoryMode) || (!isStoryMode && !weekFile.hideFreeplay && !weekFile.isExtra) || (!isStoryMode && !weekFile.hideFreeplay && weekFile.isExtra && ClientPrefs.extraOn))) {
 							weeksLoaded.set(sexList[i], weekFile);
 							weeksList.push(sexList[i]);
 						}
@@ -210,7 +195,7 @@ class WeekData {
 					weekFile.folder = directory.substring(Paths.mods().length, directory.length-1);
 					#end
 				}
-				if((PlayState.isStoryMode && !weekFile.hideStoryMode) || (!PlayState.isStoryMode && !weekFile.hideFreeplay && !weekFile.isExtra) || (!PlayState.isStoryMode && !weekFile.hideFreeplay && weekFile.isExtra && extraOn))
+				if((PlayState.isStoryMode && !weekFile.hideStoryMode) || (!PlayState.isStoryMode && !weekFile.hideFreeplay && !weekFile.isExtra) || (!PlayState.isStoryMode && !weekFile.hideFreeplay && weekFile.isExtra && ClientPrefs.extraOn))
 				{
 					weeksLoaded.set(weekToCheck, weekFile);
 					weeksList.push(weekToCheck);
