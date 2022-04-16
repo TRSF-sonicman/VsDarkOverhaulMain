@@ -3206,6 +3206,9 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
+		if(curSong == 'Roll the Credits') {
+			ClientPrefs.creditsBeaten = true;
+		}
 		
 		#if LUA_ALLOWED
 		var ret:Dynamic = callOnLuas('onEndSong', []);
@@ -3263,6 +3266,7 @@ class PlayState extends MusicBeatState
 
 						if(storyWeek == 1) {
 							ClientPrefs.darkWeekBeaten = true;
+							MusicBeatState.switchState(new CodeState());
 						}
 
 						FlxG.save.data.weekCompleted = StoryMenuState.weekCompleted;

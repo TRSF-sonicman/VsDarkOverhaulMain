@@ -7,6 +7,7 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
+	public static var creditsBeaten:Bool = false; //Gues this is an option in preferen- NO! IT IS NOT. This makes the thanks for playing button appear.
 	public static var weekbeaten:Bool = false;
 	public static var darkWeekBeaten:Bool = false; //Not an option in preferences, this is to detect if the main week (dark) has been beaten.
 	public static var extraOn:Bool = false; //Extra on is not an option in Preferences, just adding this in because I wanna make it save.
@@ -85,6 +86,7 @@ class ClientPrefs {
 	}
 
 	public static function saveSettings() {
+		FlxG.save.data.creditsBeaten = creditsBeaten;
 		FlxG.save.data.weakbeaten = weekbeaten;
 		FlxG.save.data.darkWeekBeaten = darkWeekBeaten;
 		FlxG.save.data.extraOn = extraOn;
@@ -133,6 +135,9 @@ class ClientPrefs {
 	}
 
 	public static function loadPrefs() {
+		if(FlxG.save.data.creditsBeaten != null) {
+			creditsBeaten = FlxG.save.data.creditsBeaten;
+		}
 		if(FlxG.save.data.darkWeekBeaten != null) {
 			darkWeekBeaten = FlxG.save.data.darkWeekBeaten;
 		}
