@@ -2331,7 +2331,7 @@ class PlayState extends MusicBeatState
 			{
 				health = 0.10;
 			}	
-			if(curSong.toLowerCase() == 'antitoxin' || curSong.toLowerCase () == 'antidarkness')
+			if(curSong.toLowerCase() == 'aftershock' || curSong.toLowerCase () == 'antidarkness')
 			{
 				if (health <= 0.1)
 					health = 0.1;
@@ -3458,6 +3458,9 @@ class PlayState extends MusicBeatState
 
 						if(storyWeek == 1) {
 							ClientPrefs.darkWeekBeaten = true;
+							FlxG.save.data.darkWeekBeaten = true;
+							trace("YOU BEAT THE WEEK AYYY");
+							FlxG.save.flush();
 							MusicBeatState.switchState(new CodeState());
 						}
 
@@ -4541,7 +4544,7 @@ class PlayState extends MusicBeatState
 			camHUD.zoom += 0.03;
 		}
 
-		if(curSong == 'antitoxin' && curBeat == 10)
+		if(curSong == 'aftershock' && curBeat == 10)
 		{
 			antidrain = true;
 		}

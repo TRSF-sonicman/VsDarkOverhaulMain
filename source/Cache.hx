@@ -61,7 +61,7 @@ class Cache extends MusicBeatState
 		add(darkSP);
 		darkSP.visible = false;
 
-		if (FlxG.random.bool(25.1))
+		if (FlxG.random.bool(10.1))
 		{
 			darkSP.visible =  true;
 			darkBG.visible =  false;			
