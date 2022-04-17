@@ -298,7 +298,8 @@ class MainMenuState extends MusicBeatState
 				boob += 1;
 				if (boob == 30)
 				{
-					FlxG.save.data.weekCompleted = false;
+					ClientPrefs.darkWeekBeaten == false;
+					FlxG.save.data.darkWeekBeaten = false;
 					FlxG.switchState(new MainMenuState());
 				}
 				if (FlxG.keys.pressed.DELETE)

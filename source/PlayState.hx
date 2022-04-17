@@ -3400,6 +3400,7 @@ class PlayState extends MusicBeatState
 
 		if(curSong == 'Roll the Credits') {
 			ClientPrefs.creditsBeaten = true;
+			MusicBeatState.switchState(new ThanksForPlayingState());
 		}
 		
 		#if LUA_ALLOWED

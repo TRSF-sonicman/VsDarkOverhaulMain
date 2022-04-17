@@ -14,11 +14,11 @@ class CodeState extends MusicBeatState
     {
         FlxG.sound.music.volume = 0;
 
-        epicText = new FlxText(0,0,0,"More awaits inside of the main menu screen :)",15);
+        epicText = new FlxText(0,0,0,"More awaits inside of the main menu screen and Freeplay :)",15);
         epicText.screenCenter();
         add(epicText);
 
-        code = new FlxText(epicText.x,epicText.y + 50,0,"DARK",30);
+        code = new FlxText(epicText.x,epicText.y + 50,0,"type DARK (Mouse has been Unlocked)",30);
         add(code);
 
         super.create();
