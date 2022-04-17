@@ -21,6 +21,7 @@ import Achievements;
 import editors.MasterEditorMenu;
 import flixel.input.keyboard.FlxKey;
 import flixel.util.FlxTimer;
+import flixel.ui.FlxButton;
 
 using StringTools;
 
@@ -62,6 +63,7 @@ class MainMenuState extends MusicBeatState
 	var camFollowPos:FlxObject;
 	var debugKeys:Array<FlxKey>;
 	var stepsFromExtras:Int;
+	var thanksForPlayingButton:FlxButton;
 
 	override function create()
 	{
@@ -147,6 +149,8 @@ class MainMenuState extends MusicBeatState
 		dark.scrollFactor.set(0, yScroll);
 		dark.updateHitbox();
 
+		thanksForPlayingButton = new FlxButton(0,0,"???",thanksForPlaying);
+
 		if(dark != null) 
 			dark.animation.play('bop', true);
 		
@@ -161,8 +165,13 @@ class MainMenuState extends MusicBeatState
 		{
 			FlxG.mouse.visible = false;
 		}
+
 		add(bench);
 		add(dark);
+
+		if(ClientPrefs.creditsBeaten == true) {
+			add(thanksForPlayingButton);
+		}
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -428,5 +437,10 @@ class MainMenuState extends MusicBeatState
 				spr.centerOffsets();
 			}
 		});
+	}
+
+	static function thanksForPlaying()
+	{
+		MusicBeatState.switchState(new ThanksForPlayingState());
 	}
 }
