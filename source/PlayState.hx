@@ -149,6 +149,7 @@ class PlayState extends MusicBeatState
 	private var healthBarBG:AttachedSprite;
 	public var healthBar:FlxBar;
 	var songPercent:Float = 0;
+	var infernoishigh:Bool = false;
 
 	private var timeBarBG:AttachedSprite;
 	public var timeBar:FlxBar;
@@ -218,12 +219,33 @@ class PlayState extends MusicBeatState
 
 	var lightflicker:BGSprite;
 	var oldDarkBG:BGSprite;
+	var keyground:BGSprite;
 	var TRBG:BGSprite;
-	var IdioBG:BGSprite;
-	var PolyBG:BGSprite;
-	var MorenoBG:BGSprite;
-	var InfernoBG:BGSprite;
-
+	var idioBG:BGSprite;
+	var polyBG:BGSprite;
+	var morenoBG:BGSprite;
+	var infernoBG:BGSprite;
+	var trsfIcon:BGSprite;
+	var idioIcon:BGSprite;
+	var polyIcon:BGSprite;
+	var infernoIcon:BGSprite;
+	var blackeyTRSF:BGSprite;
+	var blackeyIdio:BGSprite;
+	var blackeyPoly:BGSprite;
+	var blackeyMoreno:BGSprite;
+	var blackeyInferno:BGSprite;
+	var trsftext:FlxText;
+	var trsfquote:FlxText;
+	var idioText:FlxText;
+	var idioquote:FlxText;
+	var polyText:FlxText;
+	var polyquote:FlxText;
+	var morenoText:FlxText;
+	var morenoquote:FlxText;
+	var infernoText:FlxText;
+	var infernoquote:FlxText;
+	var thanksforplay:BGSprite;
+	var logo:BGSprite;
 	
 
 	public var songScore:Int = 0;
@@ -457,17 +479,91 @@ class PlayState extends MusicBeatState
 				lightflicker = new BGSprite('alley/light_flicker', 687, 490, 0.9, 0.9, ['flicker'], true);
 				add(lightflicker);
 			case 'discord':
-			    var oldDarkbg:BGSprite = new BGSprite('discord/dark_bg', -580, -100, 0.9, 0.9); //57 stage size
-				add(oldDarkbg);
-				var keyground:BGSprite = new BGSprite('discord/keybord_floor', 200, 810, 0.9, 0.9);
+			    oldDarkBG = new BGSprite('discord/dark_bg', -580, -100, 0.9, 0.9); //57 stage size
+				oldDarkBG.visible = false;
+				add(oldDarkBG);
+				TRBG = new BGSprite('discord/trsf_bg', 130, 290, 0.9, 0.9);
+				TRBG.antialiasing = true;
+				TRBG.setGraphicSize(Std.int(TRBG.width * 2.35));
+				TRBG.scale.y = 3.65;
+				add(TRBG);
+				trsfIcon = new BGSprite('discord/trsf_icon', 250, -485, 0.9, 0.9);
+				trsfIcon.setGraphicSize(Std.int(trsfIcon.width * 0.4));
+				trsfIcon.antialiasing = true;
+				trsfIcon.y -= 1000;
+				trsfIcon.alpha = 0;
+				add(trsfIcon);
+				blackeyTRSF = new BGSprite(null, 1480, 400, 0.9, 0.9);
+				blackeyTRSF.makeGraphic(Std.int(FlxG.width * 0.4), Std.int(FlxG.height * 0.3), FlxColor.BLACK);
+				blackeyTRSF.alpha = 0.5;
+				blackeyTRSF.x += 1000;
+				add(blackeyTRSF);
+				idioBG = new BGSprite('discord/idio_bg', 130, 290, 0.9, 0.9);
+				idioBG.antialiasing = true;
+				idioBG.setGraphicSize(Std.int(idioBG.width * 2.25));
+				idioBG.scale.y = 3.65;
+				idioBG.visible = false;
+				add(idioBG);
+				idioIcon = new BGSprite('discord/idio_icon', 150, -330, 0.9, 0.9);
+				idioIcon.setGraphicSize(Std.int(idioIcon.width * 0.4));
+				idioIcon.antialiasing = true;
+				idioIcon.y -= 1000;
+				idioIcon.alpha = 0;
+				add(idioIcon);
+				blackeyIdio = new BGSprite(null, 1480, 400, 0.9, 0.9);
+				blackeyIdio.makeGraphic(Std.int(FlxG.width * 0.44), Std.int(FlxG.height * 0.21), FlxColor.BLACK);
+				blackeyIdio.alpha = 0.5;
+				blackeyIdio.x += 1000;
+				add(blackeyIdio);
+				polyBG = new BGSprite('discord/poly_bg', 182, 290, 0.9, 0.9);
+				polyBG.antialiasing = true;
+				polyBG.setGraphicSize(Std.int(idioBG.width * 2.28));
+				polyBG.scale.y = 3.65;
+				polyBG.visible = false;
+				add(polyBG);
+				polyIcon = new BGSprite('discord/poly_icon', 265, -470, 0.9, 0.9);
+				polyIcon.setGraphicSize(Std.int(polyIcon.width * 0.4));
+				polyIcon.antialiasing = true;
+				polyIcon.y -= 1000;
+				polyIcon.alpha = 0;
+				add(polyIcon);
+				blackeyPoly = new BGSprite(null, 1480, 400, 0.9, 0.9);
+				blackeyPoly.makeGraphic(Std.int(FlxG.width * 0.44), Std.int(FlxG.height * 0.21), FlxColor.BLACK);
+				blackeyPoly.alpha = 0.5;
+				blackeyPoly.x += 1000;
+				add(blackeyPoly);
+				morenoBG = new BGSprite('discord/moreno_bg',398, 380, 0.9, 0.9);
+				morenoBG.antialiasing = true;
+				morenoBG.setGraphicSize(Std.int(morenoBG.width * 4.48));
+				morenoBG.scale.y = 6.85;
+				morenoBG.visible = false;
+				add(morenoBG);
+				blackeyMoreno = new BGSprite(null, 1480, 400, 0.9, 0.9);
+				blackeyMoreno.makeGraphic(Std.int(FlxG.width * 0.44), Std.int(FlxG.height * 0.21), FlxColor.BLACK);
+				blackeyMoreno.alpha = 0.5;
+				blackeyMoreno.x += 1000;
+				add(blackeyMoreno);
+				infernoBG = new BGSprite('discord/inferno_bg', 178, 283, 0.9, 0.9);
+				infernoBG.antialiasing = true;
+				infernoBG.setGraphicSize(Std.int(infernoBG.width * 2.38));
+				infernoBG.scale.y = 3;
+				infernoBG.visible = false;
+				add(infernoBG);
+				infernoIcon = new BGSprite('discord/inferno_icon', 0, -530, 0.9, 0.9);
+				infernoIcon.setGraphicSize(Std.int(infernoIcon.width * 0.4));
+				infernoIcon.antialiasing = true;
+				infernoIcon.y -= 1000;
+				infernoIcon.alpha = 0;
+				add(infernoIcon);
+				blackeyInferno = new BGSprite(null, 1480, 400, 0.9, 0.9);
+				blackeyInferno.makeGraphic(Std.int(FlxG.width * 0.44), Std.int(FlxG.height * 0.21), FlxColor.BLACK);
+				blackeyInferno.alpha = 0.5;
+				blackeyInferno.x += 1000;
+				add(blackeyInferno);
+				keyground = new BGSprite('discord/keybord_floor', 200, 810, 0.9, 0.9);
 				keyground.setGraphicSize(Std.int(keyground.width * 2.77));
 				keyground.antialiasing = true;
 				add(keyground);
-				TRBG = new BGSprite('discord/trsf_bg', 250, 440, 0.9, 0.9);
-				TRBG.antialiasing = true;
-				TRBG.setGraphicSize(Std.int(TRBG.width * 2.45));
-				
-				add(TRBG);
 
 			case 'spooky': //Week 2
 				if(!ClientPrefs.lowQuality) {
@@ -837,6 +933,10 @@ class PlayState extends MusicBeatState
 		gf.scrollFactor.set(0.95, 0.95);
 		gfGroup.add(gf);
 		startCharacterLua(gf.curCharacter);
+		if(SONG.song.toLowerCase() == 'roll the credits')
+		{
+			gf.alpha = 0;
+		}
 
 		dad = new Character(0, 0, SONG.player2);
 		startCharacterPos(dad, true);
@@ -1054,6 +1154,98 @@ class PlayState extends MusicBeatState
 		scoreTxt.borderSize = 1.25;
 		scoreTxt.visible = !ClientPrefs.hideHud;
 		add(scoreTxt);
+
+		trsftext = new FlxText(1575, 400, 399, "TRSF: Programmer/Charter", 32);
+		trsftext.setFormat(Paths.font("Quicksilver.ttf"), 55, FlxColor.WHITE, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		trsftext.scrollFactor.set(0.9, 0.9);
+		trsftext.borderSize = 1.3;
+		trsftext.x += 1000;
+		trsftext.alpha = 0;
+		trsftext.antialiasing = true;
+		add(trsftext);
+
+		idioText = new FlxText(1575, 400, 399, "Idiocrasy: Artist/GOD", 32);
+		idioText.setFormat(Paths.font("Quicksilver.ttf"), 55, FlxColor.WHITE, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		idioText.scrollFactor.set(0.9, 0.9);
+		idioText.borderSize = 1.3;
+		idioText.x += 1000;
+		idioText.alpha = 0;
+		idioText.antialiasing = true;
+		add(idioText);
+
+		polyText = new FlxText
+		(1575, 400, 399, 
+		"PolyProxy: OG CODER", 32);
+		polyText.setFormat(Paths.font("Quicksilver.ttf"), 55, FlxColor.WHITE, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		polyText.scrollFactor.set(0.9, 0.9);
+		polyText.borderSize = 1.3;
+		polyText.x += 1000;
+		polyText.alpha = 0;
+		polyText.antialiasing = true;
+		add(polyText);
+
+		morenoText = new FlxText
+		(1575, 400, 399, 
+		"Moreno: Lua Coder", 32);
+		morenoText.setFormat(Paths.font("Quicksilver.ttf"), 55, FlxColor.WHITE, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		morenoText.scrollFactor.set(0.9, 0.9);
+		morenoText.borderSize = 1.3;
+		morenoText.x += 1000;
+		morenoText.alpha = 0;
+		morenoText.antialiasing = true;
+		add(morenoText);
+
+		infernoText = new FlxText
+		(1575, 400, 399, 
+		"InfernoAngel: Musician", 32);
+		infernoText.setFormat(Paths.font("Quicksilver.ttf"), 55, FlxColor.WHITE, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		infernoText.scrollFactor.set(0.9, 0.9);
+		infernoText.borderSize = 1.3;
+		infernoText.x += 1000;
+		infernoText.alpha = 0;
+		infernoText.antialiasing = true;
+		add(infernoText);
+
+
+		trsfquote = new FlxText(1485, 629, 439, "I simp for nekos~", 32);
+		trsfquote.setFormat(Paths.font("vcr.ttf"), 41, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		trsfquote.scrollFactor.set(0.9, 0.9);
+		trsfquote.borderSize = 1.2;
+		trsfquote.alpha = 0;
+		trsfquote.antialiasing = true;
+		add(trsfquote);
+
+		idioquote = new FlxText(1485, 569, 439, "2/5/22", 32);
+		idioquote.setFormat(Paths.font("vcr.ttf"), 41, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		idioquote.scrollFactor.set(0.9, 0.9);
+		idioquote.borderSize = 1.2;
+		idioquote.antialiasing = true;
+		idioquote.alpha = 0;
+		add(idioquote);
+
+		polyquote = new FlxText(1485, 569, 439, "Whatcha know about rolling down in the deep", 32);
+		polyquote.setFormat(Paths.font("vcr.ttf"), 41, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		polyquote.scrollFactor.set(0.9, 0.9);
+		polyquote.borderSize = 1.2;
+		polyquote.antialiasing = true;
+		polyquote.alpha = 0;
+		add(polyquote);
+
+		morenoquote = new FlxText(1485, 569, 439, "Getting Butter. Why don't you get some bitches?", 32);
+		morenoquote.setFormat(Paths.font("vcr.ttf"), 41, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		morenoquote.scrollFactor.set(0.9, 0.9);
+		morenoquote.borderSize = 1.2;
+		morenoquote.antialiasing = true;
+		morenoquote.alpha = 0;
+		add(morenoquote);
+
+		infernoquote = new FlxText(1485, 569, 439, "We had a lot of fun making this!", 32);
+		infernoquote.setFormat(Paths.font("vcr.ttf"), 41, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		infernoquote.scrollFactor.set(0.9, 0.9);
+		infernoquote.borderSize = 1.2;
+		infernoquote.alpha = 0;
+		infernoquote.antialiasing = true;
+		add(infernoquote);
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -4178,6 +4370,79 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function TRSFRoll():Void
+	{
+		FlxTween.tween(blackeyTRSF, {x: blackeyTRSF.x - 1000, alpha: 0.5}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(trsftext, {x: trsftext.x - 1000, alpha: 1}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(trsfIcon, {y: trsfIcon.y + 1000, alpha: 1}, 1, {ease: FlxEase.circOut});
+        	FlxTween.angle(trsfIcon, trsfIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+       	new FlxTimer().start(0.50, function(tmr:FlxTimer)
+           {
+             if(trsfIcon.angle == -4) 
+ 	               FlxTween.angle(trsfIcon, trsfIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+             if (trsfIcon.angle == 4) 
+                   FlxTween.angle(trsfIcon, trsfIcon.angle, -4, 0.5, {ease: FlxEase.quartInOut});
+           }, 0);
+	}
+
+
+
+	function IdioRoll():Void
+	{
+		FlxTween.tween(blackeyIdio, {x: blackeyIdio.x - 1000, alpha: 0.5}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(idioText, {x: idioText.x - 1000, alpha: 1}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(idioIcon, {y: idioIcon.y + 1000, alpha: 1}, 1, {ease: FlxEase.circOut});
+        	FlxTween.angle(idioIcon, idioIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+       	new FlxTimer().start(0.50, function(tmr:FlxTimer)
+           {
+             if(idioIcon.angle == -4) 
+ 	               FlxTween.angle(idioIcon, idioIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+             if (idioIcon.angle == 4) 
+                   FlxTween.angle(idioIcon, idioIcon.angle, -4, 0.5, {ease: FlxEase.quartInOut});
+           }, 0);
+	}
+
+	function PolyRoll():Void
+	{
+		FlxTween.tween(blackeyPoly, {x: blackeyPoly.x - 1000, alpha: 0.5}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(polyText, {x: polyText.x - 1000, alpha: 1}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(polyIcon, {y: polyIcon.y + 1000, alpha: 1}, 1, {ease: FlxEase.circOut});
+        	FlxTween.angle(polyIcon, polyIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+       	new FlxTimer().start(0.50, function(tmr:FlxTimer)
+           {
+             if(polyIcon.angle == -4) 
+ 	               FlxTween.angle(polyIcon, polyIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+             if (polyIcon.angle == 4) 
+                   FlxTween.angle(polyIcon, polyIcon.angle, -4, 0.5, {ease: FlxEase.quartInOut});
+           }, 0);
+	}
+
+	function MorenoRoll():Void
+	{
+		FlxTween.tween(blackeyMoreno, {x: blackeyMoreno.x - 1000, alpha: 0.5}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(morenoText, {x: morenoText.x - 1000, alpha: 1}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+	}
+
+	function InfernoRoll():Void
+	{
+		FlxTween.tween(blackeyInferno, {x: blackeyInferno.x - 1000, alpha: 0.5}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(infernoText, {x: infernoText.x - 1000, alpha: 1}, 1, {ease:FlxEase.circOut, startDelay: 0.3});
+		FlxTween.tween(infernoIcon, {y: infernoIcon.y + 1000, alpha: 1}, 1, {ease: FlxEase.circOut});
+        	FlxTween.angle(infernoIcon, infernoIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+       	new FlxTimer().start(0.50, function(tmr:FlxTimer)
+           {
+             if(infernoIcon.angle == -4) 
+ 	               FlxTween.angle(infernoIcon, infernoIcon.angle, 4, 0.5, {ease: FlxEase.quartInOut});
+             if (infernoIcon.angle == 4) 
+                   FlxTween.angle(infernoIcon, infernoIcon.angle, -4, 0.5, {ease: FlxEase.quartInOut});
+           }, 0);
+	}
+
+	function DARKRoll():Void
+	{
+
+	}
+
 	private var preventLuaRemove:Bool = false;
 	override function destroy() {
 		preventLuaRemove = true;
@@ -4299,6 +4564,73 @@ class PlayState extends MusicBeatState
 			}
 		} else if(dad.danceIdle && dad.animation.curAnim.name != null && !dad.curCharacter.startsWith('gf') && !dad.animation.curAnim.name.startsWith("sing") && !dad.stunned) {
 			dad.dance();
+		}
+
+		if(curSong.toLowerCase() == 'roll the credits' && curBeat == 1)
+		{
+			TRSFRoll();
+			FlxTween.tween(trsfquote, {alpha: 1}, 0.5, {ease: FlxEase.circIn});
+			trace ("PLEASE WORK I BEG");
+		}
+		if(curSong.toLowerCase() == 'roll the credits' && curBeat == 64)
+		{
+			FlxG.camera.flash(FlxColor.PURPLE, 1);
+			TRBG.visible = false;
+			idioBG.visible = true;
+			FlxTween.tween(trsfquote, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(trsftext, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(blackeyTRSF, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(trsfIcon, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			IdioRoll();
+			FlxTween.tween(idioquote, {alpha: 1}, 0.5, {ease: FlxEase.circIn});
+			trace ("PLEASE WORK I BEG");
+		}
+		if(curSong.toLowerCase() == 'roll the credits' && curBeat == 128)
+		{
+			FlxG.camera.flash(FlxColor.CYAN, 1);
+			idioBG.visible = false;
+			polyBG.visible = true;
+			FlxTween.tween(idioquote, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(idioText, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(blackeyIdio, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(idioIcon, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			PolyRoll();
+			FlxTween.tween(polyquote, {alpha: 1}, 0.5, {ease: FlxEase.circIn});
+		}
+		if(curSong.toLowerCase() == 'roll the credits' && curBeat == 192)
+		{
+			FlxG.camera.flash(FlxColor.BROWN, 1);
+			polyBG.visible = false;
+			morenoBG.visible = true;
+			FlxTween.tween(polyquote, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(polyText, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(blackeyPoly, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(polyIcon, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			MorenoRoll();
+			FlxTween.tween(morenoquote, {alpha: 1}, 0.5, {ease: FlxEase.circIn});
+		}
+		if(curSong.toLowerCase() == 'roll the credits' && curBeat == 256)
+		{
+			FlxG.camera.flash(FlxColor.ORANGE, 1);
+			morenoBG.visible = false;
+			infernoBG.visible = true;
+			FlxTween.tween(morenoquote, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(morenoText, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(blackeyMoreno, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			InfernoRoll();
+			FlxTween.tween(infernoquote, {alpha: 1}, 0.5, {ease: FlxEase.circIn});
+		}
+		if(curSong.toLowerCase() == 'roll the credits' && curBeat == 320)
+		{
+			FlxG.camera.flash(FlxColor.PURPLE, 1);
+			infernoBG.visible = false;
+			keyground.visible = false;
+			oldDarkBG.visible = true;
+			FlxTween.tween(infernoquote, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(infernoText, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(blackeyInferno, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+			FlxTween.tween(infernoIcon, {alpha: 0}, 0.5, {ease: FlxEase.circOut});
+
 		}
 
 		switch (curStage)

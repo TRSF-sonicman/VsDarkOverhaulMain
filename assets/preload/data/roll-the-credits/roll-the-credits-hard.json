@@ -1,7 +1,7 @@
 {
 	"song": {
 		"player1": "bf",
-		"gfVersion": "gf",
+		"gfVersion": "null",
 		"notes": [
 			{
 				"sectionNotes": [
@@ -4923,6 +4923,54 @@
 						117041.911764706,
 						3,
 						0
+					],
+					[
+						115852.94117647,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						115941.176470588,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						116558.823529412,
+						1,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						116735.294117647,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						116294.117647059,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						116117.647058823,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						117088.235294117,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						117000,
+						0,
+						0,
+						"DOWNNOTE"
 					]
 				],
 				"altAnim": false,
@@ -4984,6 +5032,54 @@
 						118451.470588235,
 						2,
 						0
+					],
+					[
+						117264.705882353,
+						1,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						117441.176470588,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						117617.647058823,
+						1,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						117794.117647059,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						118058.823529412,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						118235.294117647,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						118411.764705882,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						118500,
+						3,
+						0,
+						"DOWNNOTE"
 					]
 				],
 				"altAnim": false,
@@ -5157,6 +5253,66 @@
 						122688.970588235,
 						3,
 						0
+					],
+					[
+						121500,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						121588.235294117,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						121764.705882353,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						121852.94117647,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						122117.647058823,
+						1,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						122294.117647059,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						122382.352941176,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						122558.823529412,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						122647.058823529,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						122735.294117647,
+						2,
+						0,
+						"DOWNNOTE"
 					]
 				],
 				"altAnim": false,
@@ -5218,6 +5374,54 @@
 						124098.529411764,
 						2,
 						0
+					],
+					[
+						123000,
+						1,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						123088.235294117,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						123264.705882353,
+						1,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						123441.176470588,
+						2,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						123705.882352941,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						123882.352941176,
+						3,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						123970.588235294,
+						0,
+						0,
+						"DOWNNOTE"
+					],
+					[
+						124147.058823529,
+						1,
+						0,
+						"DOWNNOTE"
 					]
 				],
 				"altAnim": false,
@@ -5723,14 +5927,44 @@
 				"bpm": 170
 			},
 			{
-				"gfSection": false,
 				"lengthInSteps": 16,
-				"altAnim": false,
 				"typeOfSection": 0,
 				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
 				"bpm": 170,
 				"changeBPM": false,
 				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 170,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"lengthInSteps": 16,
+				"typeOfSection": 0,
+				"sectionNotes": [],
+				"altAnim": false,
+				"gfSection": false,
+				"bpm": 170,
+				"changeBPM": false,
+				"mustHitSection": true
+			},
+			{
+				"sectionNotes": [],
+				"typeOfSection": 0,
+				"lengthInSteps": 16,
+				"gfSection": false,
+				"altAnim": false,
+				"mustHitSection": true,
+				"changeBPM": false,
+				"bpm": 170
 			},
 			{
 				"gfSection": false,
@@ -5753,15 +5987,148 @@
 				"mustHitSection": true
 			}
 		],
-		"events": [],
-		"player2": "dad",
+		"events": [
+			[
+				22588.2352941176,
+				[
+					[
+						"Change Character",
+						"1",
+						"idio"
+					]
+				]
+			],
+			[
+				45176.4705882353,
+				[
+					[
+						"Change Character",
+						"1",
+						"poly"
+					]
+				]
+			],
+			[
+				67764.7058823529,
+				[
+					[
+						"Change Character",
+						"1",
+						"moreno"
+					]
+				]
+			],
+			[
+				90352.9411764705,
+				[
+					[
+						"Change Character",
+						"1",
+						"inferno"
+					]
+				]
+			],
+			[
+				112941.176470588,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark-old"
+					]
+				]
+			],
+			[
+				113735.294117647,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark"
+					]
+				]
+			],
+			[
+				114352.94117647,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark-old"
+					]
+				]
+			],
+			[
+				115147.058823529,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark"
+					]
+				]
+			],
+			[
+				118588.235294117,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark"
+					]
+				]
+			],
+			[
+				119382.352941176,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark-old"
+					]
+				]
+			],
+			[
+				120088.235294117,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark"
+					]
+				]
+			],
+			[
+				120794.117647059,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark-old"
+					]
+				]
+			],
+			[
+				121323.529411764,
+				[
+					[
+						"Change Character",
+						"1",
+						"dark"
+					]
+				],
+				null,
+				"DOWNNOTE"
+			]
+		],
+		"player2": "trsf",
 		"player3": null,
 		"splashSkin": "noteSplashes",
 		"song": "Roll the Credits",
 		"needsVoices": true,
 		"arrowSkin": "",
 		"validScore": true,
-		"stage": "stage",
+		"stage": "discord",
 		"bpm": 170,
 		"speed": 2.8
 	}

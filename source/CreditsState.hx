@@ -79,6 +79,16 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+			['Cautionary Quartet Team'],
+			['TRSF', 				'trsf', 			'Lead Programmer/Charted Mirror', 						'https://www.youtube.com/channel/UC1Ha39fw78xhWJQCQkPKTfQ', '038DFF'],
+			['Idiocrasy',			'idio',				'Artist/Animator (SPAM DMS WITH PURPLE IMAGES)',		'https://www.youtube.com/channel/UChn8Ai4vAI81ZExfLwKHSRw', '2E1862'],
+			['PolyProxy', 			'poly', 			'OG Programmer/made original Dark Engine', 				'https://twitter.com/polybiusproxy',						'FFEAA6'],
+			['MorenoCappichinoChugger', 'moreno', 		'Made modcharts/downscroll notes', 						'https://twitter.com/the_chugger',							'5C4528'],
+			['InfernoAngel301', 	'inferno',			'Composer/Additional coding/Charter', 					'https://twitter.com/infernoangel301', 						'F4CF68'],
+
+			['Special Thanks'],
+			['Sansispwet', 				'sans', 			'Charted Roll-the-Credits', 						'https://www.youtube.com/channel/UC_U689uqqBwNhS1ji1TuVtg', '5E5D5B'],
+			
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',						'https://twitter.com/Shadow_Mario_',	'444444'],
 			['RiverOaken',			'riveroaken',		'Main Artist/Animator of Psych Engine',					'https://twitter.com/river_oaken',		'C30085'],
@@ -88,7 +98,7 @@ class CreditsState extends MusicBeatState
 			['shubs',				'shubs',			'New Input System Programmer',							'https://twitter.com/yoshubs',			'4494E6'],
 			['SqirraRNG',			'gedehari',			'Chart Editor\'s Sound Waveform base',					'https://twitter.com/gedehari',			'FF9300'],
 			['iFlicky',				'iflicky',			'Delay/Combo Menu Song Composer\nand Dialogue Sounds',	'https://twitter.com/flicky_i',			'C549DB'],
-			['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension',							'https://twitter.com/polybiusproxy',	'FFEAA6'],
+			['PolybiusProxy',		'polybiusproxy',	'.MP4 Video Loader Extension(hehe we added him twice)',	'https://twitter.com/polybiusproxy',	'FFEAA6'],
 			['Keoiki',				'keoiki',			'Note Splash Animations',								'https://twitter.com/Keoiki_',			'FFFFFF'],
 			[''],
 			["Funkin' Crew"],
