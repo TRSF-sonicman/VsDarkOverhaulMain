@@ -100,7 +100,7 @@ class Note extends FlxSprite
 					}
 					hitCausesMiss = true;
 				case 'No Animation':
-					noAnimation = true;
+					ignoreNote = true;
 				case 'GF Sing':
 					gfNote = true;
 			}
