@@ -948,8 +948,7 @@ class PlayState extends MusicBeatState
 		dadGroup.add(dad);
 		startCharacterLua(dad.curCharacter);
 
-		dark = new Character(0, 120, 'dark');
-		startCharacterPos(dark, true);
+		dark = new Character(0, 0, 'dark');
 		
 		boyfriend = new Boyfriend(0, 0, SONG.player1);
 		startCharacterPos(boyfriend);
@@ -1720,12 +1719,15 @@ class PlayState extends MusicBeatState
 			callOnLuas('onStartCountdown', []);
 			return;
 		}
+
 		if(curSong == 'Antivoid') {
 			thirdCharCreated = true;
 		}
 
 		if(thirdCharCreated) {
 			dadGroup.add(dark);
+			dark.y = DAD_Y + dad.y - 450;
+			dark.x = DAD_X + dad.x + 800;
 			add(iconP3);
 		}
 
