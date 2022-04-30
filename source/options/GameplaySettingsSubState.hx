@@ -70,6 +70,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
+		var option:Option = new Option('Beta Songs', //Name
+			'An option for Cautionary Quartet mod that allows you to play the beta songs.', //Description
+			'betaSongs', //Save data variable name
+			'bool', //Variable type
+			false); //Default value
+		addOption(option);
+
 		/*var option:Option = new Option('Note Delay',
 			'Changes how late a note is spawned.\nUseful for preventing audio lag from wireless earphones.',
 			'noteOffset',

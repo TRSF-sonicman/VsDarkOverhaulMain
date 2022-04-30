@@ -39,24 +39,24 @@ end
 
 function onUpdate(elapsed)
 	if getProperty('Dark.animation.name') == 'idle' then
-        setProperty('Dark.x', 0)
-		setProperty('Dark.y', 705)
+        setProperty('Dark.x', 0) --0
+		setProperty('Dark.y', 705) --0
     end
 	if getProperty('Dark.animation.name') == '0' then
-        setProperty('Dark.x', 0)
-		setProperty('Dark.y', 692)
+        setProperty('Dark.x', -4) -- -4
+		setProperty('Dark.y', 695) -- 10
     end
 	if getProperty('Dark.animation.name') == '1' then
-        setProperty('Dark.x', 0)
-		setProperty('Dark.y', 705)
+        setProperty('Dark.x', 0) -- 0
+		setProperty('Dark.y', 712) -- -7
     end
 	if getProperty('Dark.animation.name') == '2' then
-        setProperty('Dark.x', 0)
-		setProperty('Dark.y', 660)
+        setProperty('Dark.x', -6) -- -6
+		setProperty('Dark.y', 665) -- 40
     end
 	if getProperty('Dark.animation.name') == '3' then
-        setProperty('Dark.x', 0)
-		setProperty('Dark.y', 680)
+        setProperty('Dark.x', 0) -- 0
+		setProperty('Dark.y', 685) -- 20
     end
 end
 
