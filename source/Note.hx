@@ -99,8 +99,6 @@ class Note extends FlxSprite
 						missHealth = 0.3;
 					}
 					hitCausesMiss = true;
-				case 'No Animation':
-					noAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
 			}
