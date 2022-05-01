@@ -63,18 +63,18 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
+		var option:Option = new Option('Beta Songs',
+			"If checked, the beta version of the song will play\ninstead of the new one (Will only work on:\nTrespass, Darkness, Problem and Discrepancy)",
+			'betaSongs',
+			'bool',
+			false);
+		addOption(option);
+
 		var option:Option = new Option('Disable Reset Button',
 			"If checked, pressing Reset won't do anything.",
 			'noReset',
 			'bool',
 			false);
-		addOption(option);
-
-		var option:Option = new Option('Beta Songs', //Name
-			'An option for Cautionary Quartet mod that allows you to play the beta songs.', //Description
-			'betaSongs', //Save data variable name
-			'bool', //Variable type
-			false); //Default value
 		addOption(option);
 
 		/*var option:Option = new Option('Note Delay',

@@ -1323,6 +1323,7 @@ class PlayState extends MusicBeatState
 		healthBarBG.cameras = [camHUD];
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
+		iconP3.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		timeBar.cameras = [camHUD];
@@ -1781,6 +1782,9 @@ class PlayState extends MusicBeatState
 		if(ret != FunkinLua.Function_Stop) {
 			generateStaticArrows(0);
 			generateStaticArrows(1);
+			if(curSong == 'Antivoid') {
+				generateStaticArrows(2);
+			}
 			for (i in 0...playerStrums.length) {
 				setOnLuas('defaultPlayerStrumX' + i, playerStrums.members[i].x);
 				setOnLuas('defaultPlayerStrumY' + i, playerStrums.members[i].y);
@@ -2906,7 +2910,7 @@ class PlayState extends MusicBeatState
 					}
 				}
 
-				if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent && !daNote.ignoreNote)
+				if (!daNote.mustPress && daNote.wasGoodHit && !daNote.hitByOpponent && !daNote.ignoreNote && daNote.noteType != 'No Animation')
 				{
 					opponentNoteHit(daNote);
 				}
@@ -4381,7 +4385,7 @@ class PlayState extends MusicBeatState
 				if(note.isSustainNote && !note.animation.curAnim.name.endsWith('end')) {
 					time += 0.15;
 				}
-				StrumPlayAnim(false, Std.int(Math.abs(note.noteData)) % 4, time);
+				StrumPlayAnim(1, Std.int(Math.abs(note.noteData)) % 4, time);
 			} else {
 				playerStrums.forEach(function(spr:StrumNote)
 				{
@@ -5019,9 +5023,9 @@ class PlayState extends MusicBeatState
 		#end
 	}
 
-	function StrumPlayAnim(isDad:Bool, id:Int, time:Float) {
+	function StrumPlayAnim(isDad:Int, id:Int, time:Float) {
 		var spr:StrumNote = null;
-		if(isDad) {
+		if(isDad == 0) {
 			spr = strumLineNotes.members[id];
 		} else if(isDad == 1) {
 			spr = playerStrums.members[id];
