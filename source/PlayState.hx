@@ -262,6 +262,8 @@ class PlayState extends MusicBeatState
 	var memBG1:BGSprite;
 	var memBG2:BGSprite;
 	var oldDarkBGR:BGSprite;
+	var crackerscreen:BGSprite;
+	var trsfnidioblacky:BGSprite;
 	
 
 	public var songScore:Int = 0;
@@ -422,6 +424,8 @@ class PlayState extends MusicBeatState
 					curStage = 'discord';
 				case 'mirror':
 					curStage = 'mementos';
+				case 'pessimist':
+					curStage = '4chan';
 				default:
 					curStage = 'stage';
 			}
@@ -498,6 +502,15 @@ class PlayState extends MusicBeatState
 				add(ground);
 				lightflicker = new BGSprite('alley/light_flicker', 687, 490, 0.9, 0.9, ['flicker'], true);
 				add(lightflicker);
+			case '4chan':
+				crackerscreen = new BGSprite('4chan/whitebg', 0, 0, 0.6, 0.6);
+				add(crackerscreen);
+				trsfnidioblacky = new BGSprite('4chan/bg_assets', 745, 450, 0.6, 0.6, ['bg'], true);
+				trsfnidioblacky.setGraphicSize(Std.int(trsfnidioblacky.width * 1.77));
+				add(trsfnidioblacky);
+
+
+				
 			case 'mementos':
 				 darkSky = new BGSprite('alley/sky', -580, 210, 0.9, 0.9); // 319
 				 darkSky.setGraphicSize(Std.int(darkSky.width * 2));
@@ -985,6 +998,10 @@ class PlayState extends MusicBeatState
 		gfGroup.add(gf);
 		startCharacterLua(gf.curCharacter);
 		if(SONG.song.toLowerCase() == 'roll the credits')
+		{
+			gf.alpha = 0;
+		}
+		if(SONG.song.toLowerCase() == 'pessimist')
 		{
 			gf.alpha = 0;
 		}
@@ -3436,7 +3453,6 @@ class PlayState extends MusicBeatState
 			camFollow.set(gf.getMidpoint().x, gf.getMidpoint().y);
 			camFollow.x += gf.cameraPosition[0];
 			camFollow.y += gf.cameraPosition[1];
-			tweenCamIn();
 			callOnLuas('onMoveCamera', ['gf']);
 			return;
 		}
@@ -3461,7 +3477,6 @@ class PlayState extends MusicBeatState
 			camFollow.set(dad.getMidpoint().x + 150, dad.getMidpoint().y - 100);
 			camFollow.x += dad.cameraPosition[0];
 			camFollow.y += dad.cameraPosition[1];
-			tweenCamIn();
 		}
 		else
 		{
